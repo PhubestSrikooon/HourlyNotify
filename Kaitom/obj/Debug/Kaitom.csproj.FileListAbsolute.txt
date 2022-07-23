@@ -1,0 +1,15 @@
+C:\Users\forbf\source\repos\Kaitom\Kaitom\obj\Debug\Kaitom.csproj.AssemblyReference.cache
+C:\Users\forbf\source\repos\Kaitom\Kaitom\obj\Debug\Kaitom.csproj.SuggestedBindingRedirects.cache
+C:\Users\forbf\source\repos\Kaitom\Kaitom\obj\Debug\Kaitom.Properties.Resources.resources
+C:\Users\forbf\source\repos\Kaitom\Kaitom\obj\Debug\Kaitom.csproj.GenerateResource.cache
+C:\Users\forbf\source\repos\Kaitom\Kaitom\obj\Debug\Kaitom.csproj.CoreCompileInputs.cache
+C:\Users\forbf\source\repos\Kaitom\Kaitom\obj\Debug\Kaitom.MainForm.resources
+C:\Users\forbf\source\repos\Kaitom\Kaitom\bin\Debug\HourlyNotify.exe.config
+C:\Users\forbf\source\repos\Kaitom\Kaitom\bin\Debug\HourlyNotify.exe
+C:\Users\forbf\source\repos\Kaitom\Kaitom\bin\Debug\HourlyNotify.pdb
+C:\Users\forbf\source\repos\Kaitom\Kaitom\obj\Debug\HourlyNotify.exe
+C:\Users\forbf\source\repos\Kaitom\Kaitom\obj\Debug\HourlyNotify.pdb
+C:\Users\forbf\source\repos\Kaitom\Kaitom\obj\Debug\Kaitom.SubForm.SettingForm.resources
+C:\Users\forbf\source\repos\Kaitom\Kaitom\obj\Debug\Kaitom.SubForm.AddForm.resources
+C:\Users\forbf\source\repos\Kaitom\Kaitom\obj\Debug\Kaitom.SubForm.EditForm.resources
+C:\Users\forbf\source\repos\Kaitom\Kaitom\obj\Debug\Kaitom.SubForm.About.resources
