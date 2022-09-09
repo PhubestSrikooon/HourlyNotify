@@ -16,7 +16,16 @@ namespace Kaitom
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            try
+            {
+                Application.Run(new MainForm());
+
+            }
+            catch (Exception ex)
+            {
+                SubForm.ErrorForms error1 = new SubForm.ErrorForms("Error", "มีข้อผิดพลาดเกิดขึ้น", ex);
+                error1.ShowDialog();
+            }
         }
     }
 }

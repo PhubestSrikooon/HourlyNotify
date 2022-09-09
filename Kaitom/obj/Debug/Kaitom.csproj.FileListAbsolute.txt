@@ -28,3 +28,4 @@ C:\Users\forbf\Source\Repos\PhubestSrikooon\HourlyNotify\Kaitom\obj\Debug\Kaitom
 C:\Users\forbf\Source\Repos\PhubestSrikooon\HourlyNotify\Kaitom\obj\Debug\Kaitom.csproj.CoreCompileInputs.cache
 C:\Users\forbf\Source\Repos\PhubestSrikooon\HourlyNotify\Kaitom\obj\Debug\HourlyNotify.exe
 C:\Users\forbf\Source\Repos\PhubestSrikooon\HourlyNotify\Kaitom\obj\Debug\HourlyNotify.pdb
+C:\Users\forbf\Source\Repos\PhubestSrikooon\HourlyNotify\Kaitom\obj\Debug\Kaitom.SubForm.ErrorForms.resources

@@ -42,6 +42,7 @@
             this.emergencystop = new System.Windows.Forms.Button();
             this.isPauseCheck = new System.Windows.Forms.CheckBox();
             this.statShow1 = new Kaitom.lib.StatShow();
+            this.updateCheckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TrayContex.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,33 +60,34 @@
             // 
             this.TrayContex.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showhHideToolStripMenuItem,
+            this.updateCheckToolStripMenuItem,
             this.AboutToolStripMenuItem,
             this.toolStripSeparator1,
             this.exitContex});
             this.TrayContex.Name = "TrayContex";
-            this.TrayContex.Size = new System.Drawing.Size(110, 76);
+            this.TrayContex.Size = new System.Drawing.Size(181, 120);
             // 
             // showhHideToolStripMenuItem
             // 
             this.showhHideToolStripMenuItem.Name = "showhHideToolStripMenuItem";
-            this.showhHideToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.showhHideToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.showhHideToolStripMenuItem.Text = "ซ่อน";
             // 
             // AboutToolStripMenuItem
             // 
             this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
-            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.AboutToolStripMenuItem.Text = "เกี่ยวกับ";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(106, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // exitContex
             // 
             this.exitContex.Name = "exitContex";
-            this.exitContex.Size = new System.Drawing.Size(109, 22);
+            this.exitContex.Size = new System.Drawing.Size(180, 22);
             this.exitContex.Text = "ออก";
             // 
             // setting
@@ -154,6 +156,12 @@
             this.statShow1.Size = new System.Drawing.Size(667, 226);
             this.statShow1.TabIndex = 4;
             // 
+            // updateCheckToolStripMenuItem
+            // 
+            this.updateCheckToolStripMenuItem.Name = "updateCheckToolStripMenuItem";
+            this.updateCheckToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.updateCheckToolStripMenuItem.Text = "ตรวจสอบอัพเดท";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -187,6 +195,7 @@
         private System.Windows.Forms.Timer timeUpdate;
         private System.Windows.Forms.Button emergencystop;
         private System.Windows.Forms.CheckBox isPauseCheck;
+        private System.Windows.Forms.ToolStripMenuItem updateCheckToolStripMenuItem;
     }
 }
 

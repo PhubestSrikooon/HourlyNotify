@@ -71,7 +71,7 @@
             // 
             // VolumeLabel
             // 
-            this.VolumeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.VolumeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.VolumeLabel.Location = new System.Drawing.Point(4, 241);
             this.VolumeLabel.Name = "VolumeLabel";
@@ -82,7 +82,7 @@
             // 
             // VolumeTrackBar
             // 
-            this.VolumeTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.VolumeTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.VolumeTrackBar.Location = new System.Drawing.Point(4, 257);
             this.VolumeTrackBar.Maximum = 200;
@@ -93,7 +93,7 @@
             // 
             // RemoveTme
             // 
-            this.RemoveTme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RemoveTme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.RemoveTme.Location = new System.Drawing.Point(270, 218);
             this.RemoveTme.Name = "RemoveTme";
             this.RemoveTme.Size = new System.Drawing.Size(44, 20);
@@ -103,7 +103,7 @@
             // 
             // AddTime
             // 
-            this.AddTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.AddTime.Location = new System.Drawing.Point(220, 218);
             this.AddTime.Name = "AddTime";
             this.AddTime.Size = new System.Drawing.Size(44, 20);
@@ -113,6 +113,9 @@
             // 
             // TimeSelectPanel
             // 
+            this.TimeSelectPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TimeSelectPanel.AutoScroll = true;
             this.TimeSelectPanel.BackColor = System.Drawing.SystemColors.Window;
             this.TimeSelectPanel.Controls.Add(this.dateTimePicker1);
@@ -132,6 +135,8 @@
             // 
             // DateSelectList
             // 
+            this.DateSelectList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.DateSelectList.FormattingEnabled = true;
             this.DateSelectList.Items.AddRange(new object[] {
             "วันจันทร์",

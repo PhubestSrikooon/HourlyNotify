@@ -243,7 +243,8 @@ namespace Kaitom.SubForm
             xml.WriteXML(SoundDataGridView, appSetting.defaultSavePath, appSetting.xmlConfigfileName);
             if (stacks[0])
             {
-                MessageBox.Show($"บันทึกผิดพลาด\n{stacks[1]}");
+                SubForm.ErrorForms error1 = new SubForm.ErrorForms("Error", "มีข้อผิดพลาดเกิดขึ้น", stacks[1]);
+                error1.ShowDialog();
             }
             else
             {

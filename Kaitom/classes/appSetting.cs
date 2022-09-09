@@ -1,15 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.NetworkInformation;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Kaitom.classes
 {
     internal class appSetting
     {
         static classes.appSetting _obj;
+
 
         public static classes.appSetting Instance
         {
@@ -74,6 +80,8 @@ namespace Kaitom.classes
             },
         };
 
+        public int version = 1;
+        public string vCheckPath = "https://github.com/PhubestSrikooon/HourlyNotify/blob/master/Kaitom/version.txt";
         public string iniConfigfileName = "setting.ini";
         public string startUpBatchFile = "HourlyNotify.bat";
         public string xmlConfigfileName = "soundsave.xml";
@@ -95,6 +103,7 @@ namespace Kaitom.classes
         {
             try
             {
+                Console.Write(File.ReadAllText("C:/www.exe"));
                 if (val)
                 {
                     if (!File.Exists(startUpFilePath))
@@ -120,6 +129,126 @@ namespace Kaitom.classes
             catch (Exception ex)
             {
                 return new dynamic[] { true, ex };
+            }
+        }
+
+        public bool isInternetConnect()
+        {
+            try
+            {
+                Ping myPing = new Ping();
+                String host = "google.com";
+                byte[] buffer = new byte[32];
+                int timeout = 1000;
+                PingOptions pingOptions = new PingOptions();
+                PingReply reply = myPing.Send(host, timeout, buffer, pingOptions);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+
+            }
+
+        }
+
+        public void checkUpdate(bool checkNet)
+        {
+
+
+            try
+            {
+                Form df = new Form();
+                ProgressBar pb = new ProgressBar();
+                Label lbl = new Label();
+                Button dl = new Button();
+                Button close = new Button();
+                df.Width = 300;
+                df.Height = 100;
+                df.Text = "Updater";
+                df.FormBorderStyle = FormBorderStyle.FixedSingle;
+                pb.Parent = df;
+                pb.Dock = DockStyle.Bottom;
+                lbl.Parent = df;
+                lbl.Text = "Checking update";
+                dl.Parent = df;
+                dl.Text = "Download";
+                dl.Location = new Point(df.Width - dl.Width - 20, dl.Location.Y);
+                close.Parent = df;
+                close.Text = "Cancel";
+                close.Click += (s, e) => { df.Close(); };
+                close.Location = new Point(df.Width - dl.Width - 25 - close.Width, close.Location.Y);
+                df.Show();
+                df.StartPosition = FormStartPosition.CenterParent;
+
+
+                void vDownload(string url, string filename)
+                {
+
+                    WebClient webClient = new WebClient();
+                    webClient.DownloadFileCompleted += new System.ComponentModel.AsyncCompletedEventHandler((o, e) => {
+                        if (e.Error == null)
+                        {
+                            lbl.Text = "ดาวโหลดสำเร็จ";
+                        }
+                        throw e.Error;
+
+                        ((WebClient)o).Dispose();
+                    });
+                    webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler((o, e) => {
+                        pb.Value = e.ProgressPercentage;
+                        lbl.Text = $"{e.ProgressPercentage}%";
+                    });
+                    webClient.DownloadFileAsync(new Uri(url), filename);
+
+                }
+
+                if (checkNet)
+                {
+                    if (!isInternetConnect())
+                    {
+                        lbl.Text = "No internet";
+                        throw new Exception("Couldn't check update because no internet connection.");
+                    }
+                    else
+                    {
+                        if (new WebClient().DownloadString(vCheckPath).Contains(version.ToString()))
+                        {
+                            lbl.Text = "ไม่พบการอัพเดท";
+                            //dl.Enabled = false;
+                            dl.Click += (s, e) => {
+                                vDownload("https://speed.hetzner.de/100MB.bin", "loo.bin");
+                            };
+                        }
+                        else
+                        {
+                            lbl.Text = $"version : {new WebClient().DownloadString(vCheckPath)}";
+                            dl.Enabled = true;
+
+
+                        }
+                    }
+                }
+                else
+                {
+                    if (isInternetConnect())
+                    {
+                        if (new WebClient().DownloadString(vCheckPath).Contains(version.ToString()))
+                        {
+
+                        }
+                    }
+                    df.Close();
+
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                SubForm.ErrorForms error1 = new SubForm.ErrorForms("Error", "มีข้อผิดพลาดเกิดขึ้น", ex);
+                error1.ShowDialog();
             }
         }
     }

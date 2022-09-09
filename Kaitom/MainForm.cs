@@ -99,6 +99,7 @@ namespace Kaitom
         }
         public MainForm()
         {
+            appSetting.checkUpdate(false);
             Xml = new classes.XmlClass();
             InitializeComponent();
             Ini = new classes.IniFile(appSetting.iniConfigfilePath);
@@ -133,6 +134,10 @@ namespace Kaitom
                     notifyIcon1.BalloonTipText = "ระบบแจ้งเตือนรายชั่วโมงได้เริ่มทำงานแล้ว";
                     notifyIcon1.ShowBalloonTip(2);
                 }
+            };
+            updateCheckToolStripMenuItem.Click += (s, e) =>
+            {
+                appSetting.checkUpdate(true);
             };
             isPauseCheck.CheckedChanged += (s, e) =>
             {
