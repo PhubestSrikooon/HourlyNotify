@@ -131,6 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PCSHSBR11TS.ico" />
+    <Content Include="version.txt" />
     <None Include="Resources\PCCBR Student.png" />
   </ItemGroup>
   <ItemGroup>
