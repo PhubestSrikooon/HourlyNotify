@@ -200,8 +200,7 @@ namespace Kaitom.classes
                                 $"timeout 1\n"+
                                 $"del {System.Reflection.Assembly.GetExecutingAssembly().Location}\n" +
                                 $"ren {filename} {Path.GetFileName(System.Reflection.Assembly.GetExecutingAssembly().Location)} \n"+
-                                $"start {System.Reflection.Assembly.GetExecutingAssembly().Location} \n" +
-                                $"pause");
+                                $"start {System.Reflection.Assembly.GetExecutingAssembly().Location} \n");
                             sw.Close();
                             Process.Start(updatebatchfilename);
 

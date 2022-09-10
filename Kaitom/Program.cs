@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Kaitom
@@ -18,7 +16,7 @@ namespace Kaitom
             Application.SetCompatibleTextRenderingDefault(false);
             try
             {
-
+                if (File.Exists("update.bat")) { File.Delete("update.bat"); }
                 Application.Run(new MainForm());
 
             }
