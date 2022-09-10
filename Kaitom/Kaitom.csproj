@@ -154,6 +154,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="downloadlink.txt" />
     <Content Include="PCSHSBR11TS.ico" />
     <Content Include="version.txt" />
     <None Include="Resources\PCCBR Student.png" />

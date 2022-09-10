@@ -39,7 +39,7 @@ namespace Kaitom.SubForm
                     AutoRun.Checked = Convert.ToBoolean(iniFile.Read(appSetting.defaultIniKey[0, 0]));
                     trackBar1.Value = Convert.ToInt32(iniFile.Read(appSetting.defaultIniKey[1, 0]));
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     AutoRun.Checked = false;
                     trackBar1.Value = 0;

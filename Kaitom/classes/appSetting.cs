@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -81,11 +82,13 @@ namespace Kaitom.classes
         };
 
         public int version = 1;
-        public string vCheckPath = "https://github.com/PhubestSrikooon/HourlyNotify/blob/master/Kaitom/version.txt";
+        public string vCheckPath = "https://raw.githubusercontent.com/PhubestSrikooon/HourlyNotify/master/Kaitom/version.txt";
+        public Uri vDownloadLink = new Uri("https://raw.githubusercontent.com/PhubestSrikooon/HourlyNotify/master/Kaitom/downloadlink.txt");
         public string iniConfigfileName = "setting.ini";
         public string startUpBatchFile = "HourlyNotify.bat";
         public string xmlConfigfileName = "soundsave.xml";
         public string temp = $"{Path.GetTempPath()}//HoursNotify";
+        public string updatebatchfilename = "update.bat";
         public string defaultstartUpPath = $"{Environment.GetFolderPath(Environment.SpecialFolder.Startup)}";
         public string defaultSavePath = $"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}//HoursNotify";
         public string iniConfigfilePath;
@@ -103,7 +106,6 @@ namespace Kaitom.classes
         {
             try
             {
-                Console.Write(File.ReadAllText("C:/www.exe"));
                 if (val)
                 {
                     if (!File.Exists(startUpFilePath))
@@ -190,6 +192,19 @@ namespace Kaitom.classes
                         if (e.Error == null)
                         {
                             lbl.Text = "ดาวโหลดสำเร็จ";
+                            FileStream epix = File.Create(updatebatchfilename);
+                            epix.Close();
+                            StreamWriter sw = new StreamWriter(updatebatchfilename);
+                            sw.Write("@echo off\n" +
+                                $"taskkill /f /im {Path.GetFileName(System.Reflection.Assembly.GetExecutingAssembly().Location)}\n" +
+                                $"timeout 1\n"+
+                                $"del {System.Reflection.Assembly.GetExecutingAssembly().Location}\n" +
+                                $"ren {filename} {Path.GetFileName(System.Reflection.Assembly.GetExecutingAssembly().Location)} \n"+
+                                $"start {System.Reflection.Assembly.GetExecutingAssembly().Location} \n" +
+                                $"pause");
+                            sw.Close();
+                            Process.Start(updatebatchfilename);
+
                         }
                         else
                         {
@@ -203,9 +218,13 @@ namespace Kaitom.classes
                     webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler((o, e) => {
                         pb.Value = e.ProgressPercentage;
                         lbl.Text = $"{e.ProgressPercentage}%";
+
+
+
+
+
                     });
                     webClient.DownloadFileAsync(new Uri(url), filename);
-                    
 
                 }
 
@@ -221,17 +240,17 @@ namespace Kaitom.classes
                         if (new WebClient().DownloadString(vCheckPath).Contains(version.ToString()))
                         {
                             lbl.Text = "ไม่พบการอัพเดท";
-                            //dl.Enabled = false;
-                            dl.Click += (s, e) => {
-                                vDownload("https://mirror.nforce.com/pub/speedtests/10mb.bin", "loo.bin");
-                            };
+                            dl.Enabled = false;
+                            Console.WriteLine(new WebClient().DownloadString(vCheckPath));
                         }
                         else
                         {
                             lbl.Text = $"version : {new WebClient().DownloadString(vCheckPath)}";
                             dl.Enabled = true;
+                            dl.Click += (s, e) => {
 
-
+                                vDownload(new WebClient().DownloadString(vDownloadLink), "app.exe");
+                            };
                         }
                     }
                 }
@@ -239,12 +258,25 @@ namespace Kaitom.classes
                 {
                     if (isInternetConnect())
                     {
-                        if (new WebClient().DownloadString(vCheckPath).Contains(version.ToString()))
+                        if (!new WebClient().DownloadString(vCheckPath).Contains(version.ToString()))
                         {
+                            lbl.Text = $"version : {new WebClient().DownloadString(vCheckPath)}";
+                            dl.Enabled = true;
+                            dl.Click += (s, e) => {
+
+                                vDownload(new WebClient().DownloadString(vDownloadLink), "app.exe");
+                            };
+                        }
+                        else
+                        {
+                            df.Close();
 
                         }
                     }
-                    df.Close();
+                    else
+                    {
+                        df.Close();
+                    }
 
                 }
 

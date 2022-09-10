@@ -18,6 +18,7 @@ namespace Kaitom
             Application.SetCompatibleTextRenderingDefault(false);
             try
             {
+
                 Application.Run(new MainForm());
 
             }
