@@ -9,4 +9,6 @@ Reminder program that will notify you at the specified time.
 - Download the program from here [Download](https://github.com/PhubestSrikooon/HourlyNotify/releases/tag/Stable)
 - And then open the program. The program should open perfectly without an issue
 
+Or you can read full documentation here [Documentation](https://phubestsrikoon.gitbook.io/hourlynotify/)
+
 
