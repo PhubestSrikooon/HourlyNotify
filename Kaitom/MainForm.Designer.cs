@@ -33,6 +33,7 @@
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.TrayContex = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showhHideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateCheckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitContex = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,7 +43,7 @@
             this.emergencystop = new System.Windows.Forms.Button();
             this.isPauseCheck = new System.Windows.Forms.CheckBox();
             this.statShow1 = new Kaitom.lib.StatShow();
-            this.updateCheckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helplable = new System.Windows.Forms.LinkLabel();
             this.TrayContex.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,29 +66,35 @@
             this.toolStripSeparator1,
             this.exitContex});
             this.TrayContex.Name = "TrayContex";
-            this.TrayContex.Size = new System.Drawing.Size(181, 120);
+            this.TrayContex.Size = new System.Drawing.Size(148, 98);
             // 
             // showhHideToolStripMenuItem
             // 
             this.showhHideToolStripMenuItem.Name = "showhHideToolStripMenuItem";
-            this.showhHideToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.showhHideToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.showhHideToolStripMenuItem.Text = "ซ่อน";
+            // 
+            // updateCheckToolStripMenuItem
+            // 
+            this.updateCheckToolStripMenuItem.Name = "updateCheckToolStripMenuItem";
+            this.updateCheckToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.updateCheckToolStripMenuItem.Text = "ตรวจสอบอัพเดท";
             // 
             // AboutToolStripMenuItem
             // 
             this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
-            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.AboutToolStripMenuItem.Text = "เกี่ยวกับ";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(144, 6);
             // 
             // exitContex
             // 
             this.exitContex.Name = "exitContex";
-            this.exitContex.Size = new System.Drawing.Size(180, 22);
+            this.exitContex.Size = new System.Drawing.Size(147, 22);
             this.exitContex.Text = "ออก";
             // 
             // setting
@@ -156,17 +163,24 @@
             this.statShow1.Size = new System.Drawing.Size(667, 226);
             this.statShow1.TabIndex = 4;
             // 
-            // updateCheckToolStripMenuItem
+            // helplable
             // 
-            this.updateCheckToolStripMenuItem.Name = "updateCheckToolStripMenuItem";
-            this.updateCheckToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.updateCheckToolStripMenuItem.Text = "ตรวจสอบอัพเดท";
+            this.helplable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.helplable.AutoSize = true;
+            this.helplable.Location = new System.Drawing.Point(650, 16);
+            this.helplable.Name = "helplable";
+            this.helplable.Size = new System.Drawing.Size(32, 13);
+            this.helplable.TabIndex = 6;
+            this.helplable.TabStop = true;
+            this.helplable.Text = "วิธีใช้";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(694, 342);
+            this.Controls.Add(this.helplable);
             this.Controls.Add(this.isPauseCheck);
             this.Controls.Add(this.statShow1);
             this.Controls.Add(this.emergencystop);
@@ -196,6 +210,7 @@
         private System.Windows.Forms.Button emergencystop;
         private System.Windows.Forms.CheckBox isPauseCheck;
         private System.Windows.Forms.ToolStripMenuItem updateCheckToolStripMenuItem;
+        private System.Windows.Forms.LinkLabel helplable;
     }
 }
 

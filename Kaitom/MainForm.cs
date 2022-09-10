@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -154,6 +155,10 @@ namespace Kaitom
             exitContex.Click += (s, e) =>
             {
                 Application.Exit();
+            };
+            helplable.Click += (s, e) =>
+            {
+                Process.Start("https://phubestsrikoon.gitbook.io/hourlynotify/");
             };
         }
 

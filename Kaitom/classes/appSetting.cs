@@ -81,7 +81,7 @@ namespace Kaitom.classes
             },
         };
 
-        public int version = 1;
+        public int version = 2;
         public string vCheckPath = "https://raw.githubusercontent.com/PhubestSrikooon/HourlyNotify/master/Kaitom/version.txt";
         public Uri vDownloadLink = new Uri("https://raw.githubusercontent.com/PhubestSrikooon/HourlyNotify/master/Kaitom/downloadlink.txt");
         public string iniConfigfileName = "setting.ini";
