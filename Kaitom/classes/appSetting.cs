@@ -240,7 +240,6 @@ namespace Kaitom.classes
                         {
                             lbl.Text = "ไม่พบการอัพเดท";
                             dl.Enabled = false;
-                            Console.WriteLine(new WebClient().DownloadString(vCheckPath));
                         }
                         else
                         {
