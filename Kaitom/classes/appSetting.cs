@@ -191,15 +191,21 @@ namespace Kaitom.classes
                         {
                             lbl.Text = "ดาวโหลดสำเร็จ";
                         }
-                        throw e.Error;
-
+                        else
+                        {
+                            throw e.Error;
+                        }
+                        
                         ((WebClient)o).Dispose();
+                        GC.Collect();
+                        GC.WaitForPendingFinalizers();
                     });
                     webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler((o, e) => {
                         pb.Value = e.ProgressPercentage;
                         lbl.Text = $"{e.ProgressPercentage}%";
                     });
                     webClient.DownloadFileAsync(new Uri(url), filename);
+                    
 
                 }
 
@@ -217,7 +223,7 @@ namespace Kaitom.classes
                             lbl.Text = "ไม่พบการอัพเดท";
                             //dl.Enabled = false;
                             dl.Click += (s, e) => {
-                                vDownload("https://speed.hetzner.de/100MB.bin", "loo.bin");
+                                vDownload("https://mirror.nforce.com/pub/speedtests/10mb.bin", "loo.bin");
                             };
                         }
                         else
