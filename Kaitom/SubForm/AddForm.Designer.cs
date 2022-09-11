@@ -53,7 +53,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.NameTextBox.Location = new System.Drawing.Point(12, 36);
             this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(434, 20);
+            this.NameTextBox.Size = new System.Drawing.Size(423, 20);
             this.NameTextBox.TabIndex = 0;
             // 
             // NameLabel
@@ -90,7 +90,7 @@
             // FileSelect
             // 
             this.FileSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FileSelect.Location = new System.Drawing.Point(402, 75);
+            this.FileSelect.Location = new System.Drawing.Point(391, 75);
             this.FileSelect.Name = "FileSelect";
             this.FileSelect.Size = new System.Drawing.Size(44, 20);
             this.FileSelect.TabIndex = 4;
@@ -136,7 +136,7 @@
             this.TimeSelectPanel.Controls.Add(this.dateTimePicker1);
             this.TimeSelectPanel.Location = new System.Drawing.Point(219, 114);
             this.TimeSelectPanel.Name = "TimeSelectPanel";
-            this.TimeSelectPanel.Size = new System.Drawing.Size(227, 289);
+            this.TimeSelectPanel.Size = new System.Drawing.Size(216, 289);
             this.TimeSelectPanel.TabIndex = 15;
             // 
             // dateTimePicker1
@@ -145,13 +145,13 @@
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dateTimePicker1.Location = new System.Drawing.Point(0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(227, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(216, 20);
             this.dateTimePicker1.TabIndex = 0;
             // 
             // AddTime
             // 
             this.AddTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddTime.Location = new System.Drawing.Point(270, 411);
+            this.AddTime.Location = new System.Drawing.Point(341, 411);
             this.AddTime.Name = "AddTime";
             this.AddTime.Size = new System.Drawing.Size(44, 20);
             this.AddTime.TabIndex = 16;
@@ -161,7 +161,7 @@
             // RemoveTme
             // 
             this.RemoveTme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.RemoveTme.Location = new System.Drawing.Point(320, 411);
+            this.RemoveTme.Location = new System.Drawing.Point(391, 411);
             this.RemoveTme.Name = "RemoveTme";
             this.RemoveTme.Size = new System.Drawing.Size(44, 20);
             this.RemoveTme.TabIndex = 17;
@@ -193,7 +193,7 @@
             // button4
             // 
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Location = new System.Drawing.Point(363, 487);
+            this.button4.Location = new System.Drawing.Point(352, 479);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(83, 39);
             this.button4.TabIndex = 20;
@@ -205,7 +205,7 @@
             // 
             this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button5.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button5.Location = new System.Drawing.Point(274, 487);
+            this.button5.Location = new System.Drawing.Point(263, 479);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(83, 39);
             this.button5.TabIndex = 21;
@@ -216,7 +216,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(451, 534);
+            this.ClientSize = new System.Drawing.Size(443, 526);
             this.ControlBox = false;
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);

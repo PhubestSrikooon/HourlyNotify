@@ -81,7 +81,7 @@ namespace Kaitom.classes
             },
         };
 
-        public int version = 2;
+        public int version = 3;
         public string vCheckPath = "https://raw.githubusercontent.com/PhubestSrikooon/HourlyNotify/master/Kaitom/version.txt";
         public Uri vDownloadLink = new Uri("https://raw.githubusercontent.com/PhubestSrikooon/HourlyNotify/master/Kaitom/downloadlink.txt");
         public string iniConfigfileName = "setting.ini";
@@ -196,11 +196,11 @@ namespace Kaitom.classes
                             epix.Close();
                             StreamWriter sw = new StreamWriter(updatebatchfilename);
                             sw.Write("@echo off\n" +
-                                $"taskkill /f /im {Path.GetFileName(System.Reflection.Assembly.GetExecutingAssembly().Location)}\n" +
+                                $"taskkill /f /im \"{Process.GetCurrentProcess().ProcessName}.exe\"\n" +
                                 $"timeout 1\n"+
-                                $"del {System.Reflection.Assembly.GetExecutingAssembly().Location}\n" +
-                                $"ren {filename} {Path.GetFileName(System.Reflection.Assembly.GetExecutingAssembly().Location)} \n"+
-                                $"start {System.Reflection.Assembly.GetExecutingAssembly().Location} \n");
+                                $"del \"{System.Reflection.Assembly.GetExecutingAssembly().Location}\"\n" +
+                                $"ren \"{filename}\" \"{Path.GetFileName(System.Reflection.Assembly.GetExecutingAssembly().Location)}\" \n" +
+                                $"start \"\" \"{System.Reflection.Assembly.GetExecutingAssembly().Location}\" \n");
                             sw.Close();
                             Process.Start(updatebatchfilename);
 
